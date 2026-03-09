@@ -30,3 +30,19 @@ chmod +x scansystem
 
 # Run (may need root for framebuffer access)
 ./scansystem
+# Clone
+
+
+
+
+
+##
+git clone https://github.com/scansystem/scansystem
+cd scansystem
+
+# Build (requires Android NDK or clang with C++20)
+clang++ -std=c++20 -O3 -flto -static -pthread \
+    -o scansystem scansystem.cpp
+
+# Strip binary (optional, reduces size)
+strip scansystem
